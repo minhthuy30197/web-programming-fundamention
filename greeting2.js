@@ -7,10 +7,18 @@ let webApp = http.createServer(function (req, res) {
   else
     if (url === '/chat') res.end('Hello')
     else
-    if (url === '/chat?username=BinhSon') res.end('Hello, BinhSon')
+      if (url === '/chat?username=BinhSon') res.end('Hello, BinhSon')
+      else
+        if (url === '/chat?username=BinhSon&ask=time') {
+          let date = new Date();
+          let time = date.getHours()
+          let minute = date.getMinutes()
+          let second = date.getSeconds()
+          res.end(`Hello, BinhSon. It's ${time}:${minute}:${second} now`)
+        }
   res.writeHeader(200, {'Content-Type':'text/plain'})
 })
 
-const POST = 8000
-webApp.listen(POST)
-console.log(`listening at port ${POST}`)
+const PORT = 8000
+webApp.listen(PORT)
+console.log(`listening at port ${PORT}`)
