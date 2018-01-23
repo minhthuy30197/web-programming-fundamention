@@ -1,8 +1,13 @@
 let http = require('http')
 
 let webApp = http.createServer(function (req, res) {
+  let url = req.url
+  console.log(url)
+  if (url === '/') res.end('greeting')
+  else
+    if (url === '/chat') res.end('Hello')
+
   res.writeHeader(200, {'Content-Type':'text/plain'})
-  res.end('greeting')
 })
 
 const POST = 8000
