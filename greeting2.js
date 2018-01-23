@@ -6,7 +6,8 @@ let webApp = http.createServer(function (req, res) {
   if (url === '/') res.end('greeting')
   else
     if (url === '/chat') res.end('Hello')
-
+    else
+    if (url === '/chat?username=BinhSon') res.end('Hello, BinhSon')
   res.writeHeader(200, {'Content-Type':'text/plain'})
 })
 
