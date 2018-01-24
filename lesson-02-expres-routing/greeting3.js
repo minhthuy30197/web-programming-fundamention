@@ -8,7 +8,9 @@ app.get('/', (req,res) => {
 })
 
 app.get('/chat', (req,res) => {
-  res.status(200).send('Hello')
+  let username = req.param('username')
+  if (username === undefined) res.status(200).send('Hello')
+  else res.status(200).send('Hello, BinhSon')
 })
 
 app.listen(8000, function () {
