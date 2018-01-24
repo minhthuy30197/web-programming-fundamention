@@ -18,7 +18,8 @@ app.get('/chat', (req,res) => {
       let time = date.getHours()
       let minute = date.getMinutes()
       let second = date.getSeconds()
-      res.status(200).send(`Hello, BinhSon. It's ${time}:${minute}:${second} now`)
+      if (username === undefined) res.status(200).send(`Hello. It's ${time}:${minute}:${second} now`)
+      else res.status(200).send(`Hello, BinhSon. It's ${time}:${minute}:${second} now`)
     }
 })
 
