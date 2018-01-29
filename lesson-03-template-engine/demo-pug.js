@@ -7,7 +7,7 @@ app.set('view engine','pug')
 app.get('/', function (req, res) {
   let view = 'greeting'
   let param = {name: 'Thuy'}
-  res.render(view, param)
+  res.status(200).render(view, param)
 })
 
 app.listen(8000, function () {
